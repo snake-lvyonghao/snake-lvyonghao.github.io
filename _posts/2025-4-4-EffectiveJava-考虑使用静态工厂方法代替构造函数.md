@@ -22,12 +22,13 @@ return b ? Boolean.TRUE : Boolean.FALSE;
 ```
 
 ## 优点
-1. 静态工厂它可以有自己的名字, 比如这个getInstance:
+
+### 1. 静态工厂它可以有自己的名字, 比如这个getInstance:
 ```java
 StackWalker luke = StackWalker.getInstance();
 ```
 
-2. 静态工厂可以返回一个不可变的类，不需要每次调用的时候都返回一个新的对象，比如单例模式：
+#### 2. 静态工厂可以返回一个不可变的类，不需要每次调用的时候都返回一个新的对象，比如单例模式：
 ```java
 public class AppConfig {
     // 私有静态的唯一实例
@@ -50,7 +51,8 @@ public class AppConfig {
 }
 ```
 
-3. 和构造函数不同，可以返回类型的任何子类型对象。我们定义一个接口Fruit，然后通过静态工厂方法来返回不同的子类。
+### 3. 和构造函数不同，可以返回类型的任何子类型对象。我们定义一个接口Fruit，然后通过静态工厂方法来返回不同的子类。
+
 ```java
 public interface Fruit {
     String getName();
@@ -58,6 +60,7 @@ public interface Fruit {
 ```
 
 然后实现两个子类：
+
 ```java
 public class Apple implements Fruit {
     public String getName() {
@@ -73,6 +76,7 @@ public class Banana implements Fruit {
 ```
 
 使用静态工厂类决定构造什么子类
+
 ```java
 public class FruitFactory {
     public static Fruit createFruit(String type) {
@@ -87,15 +91,18 @@ public class FruitFactory {
 }
 ```
 
-4. 你可以先定义一个工厂接口或静态工厂类，但返回的实现类可以等到以后才添加（比如通过配置、反射、插件等机制注入），实现 运行时绑定 / 插件式开发 / 解耦部署。
+### 4. 你可以先定义一个工厂接口或静态工厂类，但返回的实现类可以等到以后才添加（比如通过配置、反射、插件等机制注入），实现 运行时绑定 / 插件式开发 / 解耦部署。
 
 定义一个接口
+
 ```java
 public interface PaymentProcessor {
     void pay(int amount);
 }
 ```
+
 提供一个静态工厂方法,ServiceLoader用来加载或查找所有实现了PaymentProcessor接口类型的实例。
+
 ```java
 public class PaymentFactory{
     public static Payment getPaymentProceessor(){
@@ -106,7 +113,9 @@ public class PaymentFactory{
     }
 }
 ```
+
 后来，当你新建了另一个模块实现了接口：
+
 ```java
 public class StripePayment implements PaymentProcessor {
     public void pay(int amount) {
@@ -116,6 +125,7 @@ public class StripePayment implements PaymentProcessor {
 ```
 
 你有以下的配置
+
 > \# META-INF/services/PaymentProcessor<br>
 > com.example.StripePayment
 

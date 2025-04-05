@@ -116,17 +116,20 @@ public class StripePayment implements PaymentProcessor {
 ```
 
 你有以下的配置
-> \# META-INF/services/PaymentProcessor
+> \# META-INF/services/PaymentProcessor<br>
 > com.example.StripePayment
 
 运行时调用
+
 ```java
 PaymentProcessor processor = PaymentFactory.getPaymentProcessor();
 processor.pay(99);
 ```
 
 这段代码并不依赖于StripePayment类的实现，它可以先定义，返回类（StripePayment）可以后面再添加。使用者不用关心你实际返回哪个类，只要用接口即可，实现了解耦和可扩展。
+
 ---
+
 ## 缺点
 如果一个类只提供私有构造函数 + 静态工厂方法（没有 public 或 protected 构造器），那么它就不能被继承。换老老话说就是子类不能使用父类的构造函数。当然缺点的另一面也是他的优点，更鼓励组合而不是继承。
 

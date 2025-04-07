@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      2025-4-6-EffectiveJava-使用builder构造多参数构造函数
+title:      EffectiveJava-使用builder构造多参数构造函数
 subtitle:   静态工厂 枚举 Java
 date:       2024-4-6
 author:     lvyonghao

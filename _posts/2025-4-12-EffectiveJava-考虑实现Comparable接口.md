@@ -89,6 +89,5 @@ class AreaCodeExtractor implements ToIntFunction<PhoneNumber> {
 > JDK原文：Returns a lexicographic-order comparator with a function that extracts a primitive int sort key. This is a specialization for performance of comparing(Function).
 > 返回一个字典顺序比较器，该比较器具有提取原始int排序键的函数。这是对compare （Function）性能的专门化。
 
----
-
+## 总结
 总而言之，每当实现一个对排序敏感的类都应该实现Comparable接口。当在compareTo方法实现比较时避免使用<和>操作符（可能出现整数溢出），而是使用静态的compare方法,或者像上文在Comparator接口中使用比较器构造方法。

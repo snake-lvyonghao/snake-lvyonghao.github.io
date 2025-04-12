@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      使用私有构造函数或者枚举类型强制单例属性
+title:      EffectiveJava-使用私有构造函数或者枚举类型强制单例属性
 subtitle:   静态工厂 单例 Java
 date:       2024-4-7
 author:     lvyonghao

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      如何覆盖equals准则
-subtitle:   effective ive Java
+title:      EffectiveJava-如何覆盖equals准则
+subtitle:   effective Java
 date:       2025-4-7
 author:     Lvyonghao
 header-img: img/post-bg-miui-ux.jpg

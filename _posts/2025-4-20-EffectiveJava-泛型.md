@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Effective-泛型
-subtitle:   java 泛型
+subtitle:   Java 泛型
 date:       2025-4-20
 author:     Lvyonghao
 header-img: img/post-bg-miui-ux.jpg
